@@ -108,6 +108,8 @@ location.href = "https://t.me/+VycREZ_XrXRhMjM1";
 
 const urlParams=new URLSearchParams(window.location.search);
 const id=urlParams.get('id');
+console.log("ID:", id);
+alert("ID = " + id);
 const iframe=document.getElementById('main-iframe');
 
 const channels = {
@@ -178,7 +180,8 @@ thumbnail: "https://www.sportspro.com/wp-content/uploads/2023/03/bein-edit-2.png
 };
 
 const targetData = channels.iframes.find(item => item.id === id);
-
+console.log(channels);
+console.log(targetData);
 if (targetData) {
     iframe.src = targetData.iframeSrc;
 } else {
