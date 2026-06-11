@@ -106,99 +106,22 @@ if(join){
 location.href = "https://t.me/+VycREZ_XrXRhMjM1";
 }
 
-const urlParams=new URLSearchParams(window.location.search);
-const id=urlParams.get('id');
-console.log("ID:", id);
-alert("ID = " + id);
-const iframe=document.getElementById('main-iframe');
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get("id");
 
 const channels = {
-iframes: [
-{
-"id": "hindi",
-      "name": "HINDI",
-      "type": "iframe",
-      "iframeSrc": "https://fifa-world-cup-live.pages.dev/hindi.html",
-      "thumbnail": "https://akm-img-a-in.tosshub.com/businesstoday/images/story/202404/661fb99c585c6-zee-entertainment-enterprises-will-continue-to-take-all-the-strategic-steps-that-are-aimed-towards-g-032448673-16x9.jpg?size=948:533"
-    },
-    {
-      "id": "english",
-      "name": "ENGLISH",
-      "type": "iframe",
-      "iframeSrc": "https://fifa-world-cup-live.pages.dev/english.html",
-      "thumbnail": "https://akm-img-a-in.tosshub.com/businesstoday/images/story/202404/661fb99c585c6-zee-entertainment-enterprises-will-continue-to-take-all-the-strategic-steps-that-are-aimed-towards-g-032448673-16x9.jpg?size=948:533"
-    },
-    {
-      "id": "tsn",
-      "name": "TSN",
-      "type": "iframe",
-      "iframeSrc": "https://fifa-world-cup-live.pages.dev/tsn.html",
-      "thumbnail": "https://bellmedia-images.imgix.net/lede/wp-content/uploads/2024/09/18581592_10155403529061055_8240563011649656197_n.jpg"
-    },
-    {
-      "id": "fox-sports",
-      "name": "FOX SPORTS",
-      "type": "iframe",
-      "iframeSrc": "https://fifa-world-cup-live.pages.dev/fox-sports.html",
-      "thumbnail": "https://static0.srcdn.com/wordpress/wp-content/uploads/2025/05/fox-sports-1-logo-1200x674.jpg"
-    },
-    {
-      "id": "telemundo",
-      "name": "TELEMUNDO",
-      "type": "iframe",
-      "iframeSrc": "https://fifa-world-cup-live.pages.dev/telemundo.html",
-      "thumbnail": "https://media-cldnry.s-nbcnews.com/image/upload/newscms/2020_20/3352176/telemundo-social-default.png"
-    },
-    {
-      "id": "caze-tv",
-      "name": "CAZE TV",
-      "type": "iframe",
-      "iframeSrc": "https://fifa-world-cup-live.pages.dev/caze-tv.html",
-      "thumbnail": "https://static.wikia.nocookie.net/logopedia/images/a/a3/CazeTV2022_qatar.jpg"
-    },
-    {
-      "id": "sportv",
-      "name": "SPORTV",
-      "type": "iframe",
-      "iframeSrc": "https://fifa-world-cup-live.pages.dev/sportv.html",
-      "thumbnail": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/SporTV_logo_2021.svg/512px-SporTV_logo_2021.svg.png"
-    },
-    {
-      "id": "dsports",
-      "name": "DSPORTS",
-      "type": "iframe",
-      "iframeSrc": "https://fifa-world-cup-live.pages.dev/dsports.html",
-      "thumbnail": "https://m.media-amazon.com/images/S/le-target-images-prod/amzn1.dv.gti.e524621f-1786-4d81-bfd1-40a07d8d997f/7/BOXART-16X9/da-DK._UR1920,1080_.jpg"
-    },
-    {
-'id": "benin",
-"name": "BENIN",
-"iframeSrc": "https://fifa-world-cup-live.pages.dev/benin.html",
-thumbnail: "https://www.sportspro.com/wp-content/uploads/2023/03/bein-edit-2.png"
-}
-]
+  hindi: "https://fifa-world-cup-live.pages.dev/hindi.html",
+  english: "https://fifa-world-cup-live.pages.dev/english.html",
+  tsn: "v"
 };
 
-const targetData = channels.iframes.find(item => item.id === id);
-console.log(channels);
-console.log(targetData);
-if (targetData) {
-    iframe.src = targetData.iframeSrc;
+const iframe = document.getElementById("main-iframe");
+
+if (channels[id]) {
+  iframe.src = channels[id];
 } else {
-    showError("Stream not found");
+  document.body.innerHTML = "<h2>Stream not found</h2>";
 }
-
-function showError(msg){
-const h2=document.createElement('h2');
-h2.className='error-msg';
-h2.innerText=msg;
-document.body.appendChild(h2);
-iframe.style.display='none';
-const badge=document.querySelector('.telegram-btn');
-if(badge) badge.style.display='none';
-}
-
-});
 </script>
 </body>
 </html>
