@@ -112,16 +112,24 @@ const id = urlParams.get("id");
 const channels = {
   hindi: "https://fifa-world-cup-live.pages.dev/hindi.html",
   english: "https://fifa-world-cup-live.pages.dev/english.html",
-  tsn: "v"
+  tsn: "https://fifa-world-cup-live.pages.dev/tsn.html",
+  "fox-sports": "https://fifa-world-cup-live.pages.dev/fox-sports.html",
+  telemundo: "https://fifa-world-cup-live.pages.dev/telemundo.html",
+  "caze-tv": "https://fifa-world-cup-live.pages.dev/caze-tv.html",
+  sportv: "https://fifa-world-cup-live.pages.dev/sportv.html",
+  dsports: "https://fifa-world-cup-live.pages.dev/dsports.html",
+  benin: "https://fifa-world-cup-live.pages.dev/benin.html"
 };
 
 const iframe = document.getElementById("main-iframe");
 
 if (channels[id]) {
-  iframe.src = channels[id];
+    iframe.src = channels[id];
 } else {
-  document.body.innerHTML = "<h2>Stream not found</h2>";
+    document.body.innerHTML = "<h2 style='color:white;text-align:center'>Stream not found</h2>";
 }
+
+});
 </script>
 </body>
 </html>
